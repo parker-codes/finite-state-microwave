@@ -11,7 +11,7 @@ export default Machine(
 
     context: {
       digits: '',
-      timer: null,
+      timer: 0,
     },
 
     states: {
@@ -34,7 +34,7 @@ export default Machine(
             target: 'idle', // reenters state, firing entry actions
           },
 
-          THIRTY_SECS: {
+          ADD_THIRTY_SECS: {
             actions: ['add30SecondsToDigits'],
           },
         },
@@ -57,14 +57,15 @@ export default Machine(
             target: 'paused',
           },
 
-          THIRTY_SECS: {
+          ADD_THIRTY_SECS: {
             actions: ['add30SecondsToTimer'],
+            // TODO: add a guard so that it can't go over 99:99
           },
 
           TICK: [
             {
               actions: 'decrementTimer',
-              cond: 'isTimerAboutToFinish',
+              cond: 'timerIsAboutToFinish',
               target: 'finished',
             },
             {
@@ -101,7 +102,7 @@ export default Machine(
     guards: {
       hasDigits: (context) => context.digits.length > 0,
 
-      isTimerAboutToFinish: (context) => context.timer === 1,
+      timerIsAboutToFinish: (context) => context.timer === 1,
     },
 
     actions: {
@@ -130,11 +131,16 @@ export default Machine(
       }),
 
       // convert digits into timer before heating state
-      setTimer: assign({ timer: (context) => parseInt(context.digits) }),
+      setTimer: assign({
+        timer: (context) => {
+          // TODO: weird logic of turning something like 1:00 to 60 seconds
+          return parseInt(context.digits);
+        },
+      }),
 
       resetDigits: assign({ digits: () => '' }),
 
-      resetTimer: assign({ timer: () => null }),
+      resetTimer: assign({ timer: 0 }),
 
       beep() {
         console.log('BEEP');

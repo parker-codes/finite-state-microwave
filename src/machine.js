@@ -19,8 +19,45 @@ export default Machine(
         entry: ['resetDigits', 'resetTimer'],
 
         on: {
-          DIGIT: {
-            actions: ['appendDigit'],
+          PRESS_1: {
+            actions: ['append1ToDigits'],
+          },
+
+          PRESS_2: {
+            actions: ['append2ToDigits'],
+          },
+
+          PRESS_3: {
+            actions: ['append3ToDigits'],
+          },
+
+          PRESS_4: {
+            actions: ['append4ToDigits'],
+          },
+
+          PRESS_5: {
+            actions: ['append5ToDigits'],
+          },
+
+          PRESS_6: {
+            actions: ['append6ToDigits'],
+          },
+
+          PRESS_7: {
+            actions: ['append7ToDigits'],
+          },
+
+          PRESS_8: {
+            actions: ['append8ToDigits'],
+          },
+
+          PRESS_9: {
+            actions: ['append9ToDigits'],
+          },
+
+          PRESS_0: {
+            cond: 'hasDigits',
+            actions: ['append0ToDigits'],
           },
 
           START: {
@@ -34,9 +71,16 @@ export default Machine(
             target: 'idle', // reenters state, firing entry actions
           },
 
-          ADD_THIRTY_SECS: {
-            actions: ['add30SecondsToDigits'],
-          },
+          ADD_THIRTY_SECS: [
+            {
+              cond: 'hasDigits',
+              actions: ['add30SecondsToDigits'],
+            },
+            {
+              actions: ['add30SecondsToDigits', 'setTimer'],
+              target: 'heating',
+            },
+          ],
         },
       },
 
@@ -64,8 +108,8 @@ export default Machine(
 
           TICK: [
             {
-              actions: 'decrementTimer',
               cond: 'timerIsAboutToFinish',
+              actions: 'decrementTimer',
               target: 'finished',
             },
             {
@@ -106,12 +150,48 @@ export default Machine(
     },
 
     actions: {
-      decrementTimer: assign({
-        timer: (context) => context.timer - 1,
+      append1ToDigits: assign({
+        digits: (context) => `${context.digits}1`,
       }),
 
-      appendDigit: assign({
-        digits: (context, event) => `${context.digits}${event.digit}`,
+      append2ToDigits: assign({
+        digits: (context) => `${context.digits}2`,
+      }),
+
+      append3ToDigits: assign({
+        digits: (context) => `${context.digits}3`,
+      }),
+
+      append4ToDigits: assign({
+        digits: (context) => `${context.digits}4`,
+      }),
+
+      append5ToDigits: assign({
+        digits: (context) => `${context.digits}5`,
+      }),
+
+      append6ToDigits: assign({
+        digits: (context) => `${context.digits}6`,
+      }),
+
+      append7ToDigits: assign({
+        digits: (context) => `${context.digits}7`,
+      }),
+
+      append8ToDigits: assign({
+        digits: (context) => `${context.digits}8`,
+      }),
+
+      append9ToDigits: assign({
+        digits: (context) => `${context.digits}9`,
+      }),
+
+      append0ToDigits: assign({
+        digits: (context) => `${context.digits}0`,
+      }),
+
+      decrementTimer: assign({
+        timer: (context) => context.timer - 1,
       }),
 
       add30SecondsToDigits: assign({
@@ -133,8 +213,10 @@ export default Machine(
       // convert digits into timer before heating state
       setTimer: assign({
         timer: (context) => {
-          // TODO: weird logic of turning something like 1:00 to 60 seconds
-          return parseInt(context.digits);
+          const padded = context.digits.padStart(4, '0');
+          const minutes = parseInt(padded.slice(0, 2));
+          const seconds = parseInt(padded.slice(2, 4));
+          return minutes * 60 + seconds;
         },
       }),
 

@@ -45,7 +45,7 @@ $: display = getDisplay($state.value, $state.context)
         <Door heating={$state.matches('heating')} />
         <Display value={display} />
         <Panel
-            on:digit={event => send('DIGIT', { digit: event.detail })}
+            on:digit={event => send(`PRESS_${event.detail}`)}
             on:start={event => send('START')}
             on:addThirty={() => send('ADD_THIRTY_SECS')}
             on:stop={() => send('STOP')} />

@@ -7,34 +7,21 @@ import Panel from '../components/Panel.svelte';
 import OpenButton from '../components/OpenButton.svelte';
 
 import machine from '../machine';
-import { useMachine } from 'svelte-xstate';
+import { useMachine } from 'xstate-svelte';
 import time from '../stores/time';
-import { pad } from '../helpers';
+import { formatDigits, formatTimer } from '../helpers';
 
-let [state, send] = useMachine(machine);
+let { state, send } = useMachine(machine);
 
-function getDisplay(state, { digits, timer }) {
-    if (state === 'idle') {
-        if (digits === '') return $time;
-        return formatDigits(digits);
-    } else if (state === 'finished') {
-        return 'DONE';
-    } else /* heating or paused */ {
-        return formatTimer(timer);
-    }
-}
-
-function formatDigits(digits) {
-    const padded = digits.padStart(4, '0');
-    const firstPart = padded.slice(0, 2);
-    const secondPart = padded.slice(2, 4);
-    return `${firstPart}:${secondPart}`;
-}
-
-function formatTimer(timer) {
-    const minutes = pad(Math.floor(timer / 60));
-    const seconds = pad(timer % 60);
-    return `${minutes}:${seconds}`;
+export function getDisplay(state, { digits, timer }) {
+  if (state === 'idle') {
+    if (digits === '') return $time;
+    return formatDigits(digits);
+  } else if (state === 'finished') {
+    return 'DONE';
+  } /* heating or paused */ else {
+    return formatTimer(timer);
+  }
 }
 
 $: display = getDisplay($state.value, $state.context)

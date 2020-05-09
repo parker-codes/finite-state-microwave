@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: ['./src/**/*.html', './src/**/*.svelte'],
   theme: {
     extend: {
       spacing: {
@@ -18,6 +18,8 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    margin: ['responsive', 'first', 'hover', 'focus'],
+  },
   plugins: [],
 };

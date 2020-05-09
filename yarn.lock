@@ -2605,15 +2605,7 @@ svelte-preprocess@^3.7.4:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
-svelte-xstate@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/svelte-xstate/-/svelte-xstate-1.0.1.tgz#e04b75700ec611b057bf8a14b8ce6f35a7d7d929"
-  integrity sha512-k/U5goMuPnfkNIo2BlwBaHejScebULsg1RmlVgosbslxvw9FRSzV4NYzXtEWyowspJC9O9g9iVQ4WkRFXMSRlQ==
-  dependencies:
-    svelte "^3.12.1"
-    xstate "^4.6.7"
-
-svelte@^3.12.1, svelte@^3.20.1:
+svelte@^3.20.1:
   version "3.21.0"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.21.0.tgz#e326591cb92267e90b4fb5b961d80d9763792551"
   integrity sha512-smh3LZKPCGJ+UXa0iZvUmuDctPYCwPY1opmClTWTm+l6e4y9FHLoCZMiue8YIeyc9JvlGT/EK0xry0diXjFDZQ==
@@ -2623,10 +2615,10 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-tailwindcss@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.4.1.tgz#e9f3695c246823b881cd0aa9eabaf8a844dec2ec"
-  integrity sha512-SbNG8Ca0o3mqtE/iHIP5hkzRVAtqDvKv7bWVZVOYdQq3ysoOrgNaInKSWvlhFrJxWnNAZHt8BAH3hcevcCZdUQ==
+tailwindcss@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.4.6.tgz#17b37166ccda08d7e7f9ca995ea48ce1e0089700"
+  integrity sha512-qV0qInUq1FWih39Bc5CWECdgObSzRrbjGD4ke4kAPSIq6WXrPhv0wwOcUWJgJ66ltT9j+XnSRYikG8WNRU/fTQ==
   dependencies:
     "@fullhuman/postcss-purgecss" "^2.1.2"
     autoprefixer "^9.4.5"
@@ -2901,7 +2893,12 @@ xmlchars@^2.2.0:
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
 
-xstate@^4.6.7:
+xstate-svelte@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/xstate-svelte/-/xstate-svelte-0.1.1.tgz#d844c50a9294963a89df897e8dff44d8c1d84250"
+  integrity sha512-8C2nDWQremA0BEjY9aZH6VDr2pZ1uxT1bUH2jkBxbf7srQTKVXtqHvziCVwzZEVch2M4QzxbpI9jaXfeZ5WisA==
+
+xstate@^4.9.1:
   version "4.9.1"
   resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.9.1.tgz#da883ae0993b129ba0b54592c59b069963b0fe0a"
   integrity sha512-cfNnRaBebnr1tvs0nHBUTyomfJx36+8MWwXceyNTZfjyELMM8nIoiBDcUzfKmpNlnAvs2ZPREos19cw6Zl4nng==

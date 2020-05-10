@@ -5,7 +5,7 @@ const dispatch = createEventDispatcher();
 import PanelButton from './PanelButton.svelte';
 </script>
 
-<div id="panel" class="row-start-2 row-span-4 col-start-6 col-span-1 bg-green-200 grid grid-cols-3 grid-rows-7">
+<div id="panel" class="row-start-2 row-span-4 col-start-5 col-span-1 bg-green-200 grid grid-cols-3 grid-rows-7">
     <PanelButton
         on:press={() => dispatch('digit', 1)}
         class="row-start-1 row-span-1 col-start-1 col-span-1">

@@ -15,7 +15,13 @@ module.exports = {
         '144': '36rem',
         '152': '38rem',
         '240': '60rem',
+        '304': '76rem',
       },
+    },
+    inset: {
+      '0': 0,
+      auto: 'auto',
+      '1/6': '16.6%',
     },
   },
   variants: {

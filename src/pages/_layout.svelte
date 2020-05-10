@@ -12,7 +12,7 @@ const links = [
 </script>
 
 <div class="bg-gray-200 w-screen h-screen" bind:offsetWidth={$width}>
-    <header class="lg:w-1/3 lg:mx-auto flex justify-between px-2 py-4">
+    <header class="max-w-lg mx-auto flex justify-between px-4 py-4">
         {#each links as { name, path }}
             <div class="ml-6 first:ml-0 font-bold">
                 <a href={$url(path)} class="{$isActive(path) ? 'text-indigo-500' : ''}">

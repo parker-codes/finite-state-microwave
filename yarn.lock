@@ -23,6 +23,13 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@babel/runtime@^7.9.2":
+  version "7.9.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
+  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@fullhuman/postcss-purgecss@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-2.1.2.tgz#8fe4d4ae2b58214b5452cb490a31c7146517442f"
@@ -85,22 +92,24 @@
     estree-walker "^1.0.1"
     micromatch "^4.0.2"
 
-"@sveltech/routify@^1.5.9":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@sveltech/routify/-/routify-1.6.1.tgz#0ff6d6a1583ad3b8e511b45c77aa04cd09bec23f"
-  integrity sha512-mMeRcui2Wg6eGXpetPq7gW4OL2gl3soCn1BlajMfszSismSZV3iZ6xV6b4E6/oI0Josblxo6OOpBYLxPnj1YVw==
+"@sveltech/routify@^1.7.8":
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/@sveltech/routify/-/routify-1.7.8.tgz#762f38f64d0d8f0ca2a56d5037389b7f16058ed5"
+  integrity sha512-XB5DkIcBveWp36Gfkzf13Bm3QOTpWNpXZacu1ZrkFdmi2xKMFxXH+ompXzeSYOFnQbskRzFnyjfp8fRfNXrSbA==
   dependencies:
     "@sveltech/ssr" "^0.0.9"
     "@types/node" ">=4.2.0 < 13"
     cheap-watch "^1.0.2"
     commander "^5.0.0"
-    config "^3.2.5"
+    dotenv "^8.2.0"
     fs-extra "^9.0.0"
     js-yaml "^3.13.1"
+    json5 "^2.1.3"
     log-symbols "^3.0.0"
     picomatch "^2.2.1"
     readdirp "^3.3.0"
     rollup-pluginutils "^2.8.2"
+    yaml "^1.9.2"
 
 "@sveltech/ssr@0.0.9", "@sveltech/ssr@^0.0.9":
   version "0.0.9"
@@ -597,13 +606,6 @@ concurrently@^5.1.0:
     tree-kill "^1.2.2"
     yargs "^13.3.0"
 
-config@^3.2.5:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/config/-/config-3.3.1.tgz#b6a70e2908a43b98ed20be7e367edf0cc8ed5a19"
-  integrity sha512-+2/KaaaAzdwUBE3jgZON11L1ggLLhpf2FsGrfqYFHZW22ySGv/HqYIXrBwKKvn+XZh1UBUjHwAcrfsSkSygT+Q==
-  dependencies:
-    json5 "^2.1.1"
-
 content-disposition@0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/content-disposition/-/content-disposition-0.5.3.tgz#e130caf7e7279087c5616c2007d0485698984fbd"
@@ -806,6 +808,11 @@ domexception@^2.0.1:
   integrity sha512-yxJ2mFy/sibVQlu5qHjOkf9J3K6zgmCxgJ94u2EdvDOV09H+32LtRswEcUsmUWN72pVLOEnTSRaIVVzVQgS0dg==
   dependencies:
     webidl-conversions "^5.0.0"
+
+dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
@@ -1511,7 +1518,7 @@ json-stringify-safe@~5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
 
-json5@^2.1.1:
+json5@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.1.3.tgz#c9b0f7fa9233bfe5807fe66fcf3a5617ed597d43"
   integrity sha512-KXPvOm8K9IJKFM0bmdn8QXh7udDh1g/giieX0NLCaMnb4hEiVFqnop2ImTXCc5e0/oHz3LTqmHGtExn5hfMkOA==
@@ -2150,6 +2157,11 @@ reduce-css-calc@^2.1.6:
   dependencies:
     css-unit-converter "^1.1.1"
     postcss-value-parser "^3.3.0"
+
+regenerator-runtime@^0.13.4:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
+  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
 
 request-promise-core@1.1.3:
   version "1.1.3"
@@ -2912,6 +2924,13 @@ y18n@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
   integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
+
+yaml@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.9.2.tgz#f0cfa865f003ab707663e4f04b3956957ea564ed"
+  integrity sha512-HPT7cGGI0DuRcsO51qC1j9O16Dh1mZ2bnXwsi0jrSpsLz0WxOLSLXfkABVl6bZO629py3CU+OMJtpNHDLB97kg==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
 
 yargs-parser@^13.1.2:
   version "13.1.2"

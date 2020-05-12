@@ -33,7 +33,7 @@
     "tailwindcss": "^1.4.6"
   },
   "dependencies": {
-    "@sveltech/routify": "^1.5.9",
+    "@sveltech/routify": "^1.7.8",
     "svelte": "^3.20.1",
     "xstate": "^4.9.1",
     "xstate-svelte": "^0.1.1"

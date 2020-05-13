@@ -3,7 +3,7 @@ import { isActive, layout, url } from '@sveltech/routify';
 
 const links = [
     { name: 'Machine', path: '/' },
-    { name: 'How It Works', path: '/how' },
+    { name: "How It's Made", path: '/how' },
     { name: 'Tech', path: '/tech' },
 ];
 </script>

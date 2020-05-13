@@ -1,7 +1,8 @@
 <script>
 export let size = 1;
+export let centered = false;
 
-const sharedClasses = `font-mono font-bold text-blue-600 underline`;
+$: sharedClasses = `font-mono font-bold text-blue-600 underline ${centered ? 'text-center' : ''}`;
 </script>
 
 {#if size === 1}

@@ -1,10 +1,10 @@
 <script>
-import Background from '../components/machine/Background.svelte';
-import Microwave from '../components/machine/Microwave.svelte';
-import Door from '../components/machine/Door.svelte';
-import Display from '../components/machine/Display.svelte';
-import Panel from '../components/machine/Panel.svelte';
-import OpenButton from '../components/machine/OpenButton.svelte';
+import Background from 'components/machine/Background.svelte';
+import Microwave from 'components/machine/Microwave.svelte';
+import Door from 'components/machine/Door.svelte';
+import Display from 'components/machine/Display.svelte';
+import Panel from 'components/machine/Panel.svelte';
+import OpenButton from 'components/machine/OpenButton.svelte';
 
 import machine from '../machine';
 import { useMachine } from 'xstate-svelte';

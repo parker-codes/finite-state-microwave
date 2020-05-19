@@ -7,6 +7,9 @@ import copy from 'rollup-plugin-copy';
 import del from 'del';
 import sveltePreprocess from 'svelte-preprocess';
 import replace from 'rollup-plugin-replace';
+import alias from '@rollup/plugin-alias';
+import svelteSVG from 'rollup-plugin-svelte-svg';
+import image from '@rollup/plugin-image';
 
 const staticDir = 'static';
 const distDir = 'dist';
@@ -50,6 +53,15 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
       replace({
         'process.env.NODE_ENV': production ? JSON.stringify('production') : JSON.stringify('development'),
       }),
+      alias({
+        entries: [
+          { find: '~', replacement: './src' },
+          { find: 'components', replacement: './src/components' },
+          { find: 'assets', replacement: './src/assets' },
+        ],
+      }),
+      image({ exclude: ['**/*.svg'] }),
+      svelteSVG({ dev: !production }),
 
       // If you have external dependencies installed from
       // npm, you'll most likely need these plugins. In

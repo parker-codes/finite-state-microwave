@@ -1,11 +1,17 @@
 <script>
-import Section from '../components/how/Section.svelte';
-import Heading from '../components/how/Heading.svelte';
-import Paragraph from '../components/how/Paragraph.svelte';
-import List from '../components/how/List.svelte';
-import Image from '../components/how/Image.svelte';
-import Callout from '../components/how/Callout.svelte';
-import Break from '../components/how/Break.svelte';
+import Section from 'components/how/Section.svelte';
+import Heading from 'components/how/Heading.svelte';
+import Paragraph from 'components/how/Paragraph.svelte';
+import List from 'components/how/List.svelte';
+import Image from 'components/how/Image.svelte';
+import Callout from 'components/how/Callout.svelte';
+import Break from 'components/how/Break.svelte';
+import Link from 'components/how/Link.svelte';
+import Highlight from 'components/how/Highlight.svelte';
+
+import examples from '../examples.js';
+
+import appleImage from 'assets/img/apple.png';
 </script>
 
 <Section>
@@ -21,10 +27,18 @@ import Break from '../components/how/Break.svelte';
         Keep reading to learn about how I implemented the machine logic and visual design.
         Hopefully you'll feel excited to use some of these techniques in your own projects!
     </Paragraph>
+
+    <Paragraph>
+        <!-- TODO: finish table of contents -->
+        <div><Link to="#first-things-first">First Things First</Link></div>
+        <div><Link to="#the-machine">The Machine</Link></div>
+    </Paragraph>
 </Section>
 
 <Section darkBg>
-    <Heading size={3}>First Things First</Heading>
+    <Heading id="first-things-first" size={3}>
+        First Things First
+    </Heading>
 
     <Paragraph onDarkBg>
         Before I just started coding, I wrote some notes about how a microwave works. After reading more about state machines, I organized my notes into what states the microwave can be in and then noted what events can happen in each of those states. Here are some examples:
@@ -35,7 +49,7 @@ import Break from '../components/how/Break.svelte';
 </Section>
 
 <Section>
-    <Heading size={3}>The Machine</Heading>
+    <Heading id="the-machine" size={3}>The Machine</Heading>
 
     <Callout title="What are state machines?">
         A simple explanation might be the "statuses" (aka. states) of a particular thing
@@ -69,7 +83,7 @@ import Break from '../components/how/Break.svelte';
 
     <!-- TODO: show gif of visualizer -->
     <!-- TODO: could even be for a different, simpler machine -->
-    <!-- <Image src="../../public/img/apple.png" alt="a red apple" /> -->
+    <Image src={appleImage} alt="a red apple" />
 
     <Paragraph>
         Now that we know a little more about state machines and how the visualizer can help,
@@ -85,6 +99,7 @@ import Break from '../components/how/Break.svelte';
     </Paragraph>
 
     <!-- TODO: show some basic code for the structure of the machine -->
+    <Highlight code={examples.first} />
 
     <!-- TODO: use callout to link to visualizer -->
 
@@ -96,7 +111,7 @@ import Break from '../components/how/Break.svelte';
         <!-- originally had DIGIT, which passed { digit: 1 } , but that got changed to restrict the API more (because there really only are 10 possible digits) -->
     </Paragraph>
 
-    <Heading size={3}>Design</Heading>
+    <Heading id="design" size={3}>Design</Heading>
 
     <Paragraph>
         used grid and contrasting colors so I could get running quickly. made wrapper components to hide the styling and improve visual appeal
@@ -116,7 +131,7 @@ import Break from '../components/how/Break.svelte';
         add note and code about when I talked with Trevor and found that +30 should go to heating state if there wre no digits entered already
     </Paragraph>
 
-    <Heading size={3}>Revamping the Design</Heading>
+    <Heading id="design-revamp" size={3}>Revamping the Design</Heading>
 
     <Paragraph>
         went for a simple, polished look. made it "zoom in" on as the screen sizes get smaller, so it's usable on a phone without seeing most of the microwave

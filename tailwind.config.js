@@ -19,6 +19,8 @@ module.exports = {
       },
     },
     inset: {
+      '-8': '-2rem',
+      '-6': '-1.5rem',
       '0': 0,
       auto: 'auto',
       '1/6': '16.6%',
@@ -26,6 +28,7 @@ module.exports = {
   },
   variants: {
     margin: ['responsive', 'first', 'hover', 'focus'],
+    visibility: ['responsive', 'hover', 'group-hover', 'focus'],
   },
   plugins: [],
 };

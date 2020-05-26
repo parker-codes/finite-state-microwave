@@ -1,4 +1,9 @@
+<svelte:head>
+	<link href="/css/prism-theme-nord.css" rel="stylesheet" type="text/css" />
+</svelte:head>
+
 <script>
+import { onMount } from 'svelte';
 import Section from 'components/how/Section.svelte';
 import Heading from 'components/how/Heading.svelte';
 import Paragraph from 'components/how/Paragraph.svelte';
@@ -12,6 +17,13 @@ import Highlight from 'components/how/Highlight.svelte';
 import examples from '../examples.js';
 
 import appleImage from 'assets/img/apple.png';
+
+import Prism from 'prismjs';
+import 'prism-svelte';
+
+onMount(() => {
+    Prism.highlightAll();
+})
 </script>
 
 <Section>
@@ -46,6 +58,8 @@ import appleImage from 'assets/img/apple.png';
 
     <!-- TODO: list out some of the states and events -->
     <List items={['Item 1', 'Item 2']} onDarkBg />
+
+    <Highlight code={examples.first} />
 </Section>
 
 <Section>

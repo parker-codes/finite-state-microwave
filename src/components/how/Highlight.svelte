@@ -2,7 +2,7 @@
 export let code;
 </script>
 
-<pre class="svelte">
+<pre class="language-svelte rounded">
     <code>
         {code}
     </code>

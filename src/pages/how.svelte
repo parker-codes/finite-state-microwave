@@ -16,8 +16,6 @@ import Highlight from 'components/how/Highlight.svelte';
 
 import examples from '../examples.js';
 
-import appleImage from 'assets/img/apple.png';
-
 import Prism from 'prismjs';
 import 'prism-svelte';
 
@@ -97,7 +95,10 @@ onMount(() => {
 
     <!-- TODO: show gif of visualizer -->
     <!-- TODO: could even be for a different, simpler machine -->
-    <Image src={appleImage} alt="a red apple" />
+
+    <Image src="/img/initial-design.png" alt="the initial design" large />
+
+    <Image src="/img/final-design.png" alt="the final design" large />
 
     <Paragraph>
         Now that we know a little more about state machines and how the visualizer can help,

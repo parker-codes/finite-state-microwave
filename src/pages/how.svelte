@@ -4,6 +4,7 @@
 
 <script>
 import { onMount } from 'svelte';
+import BlogDetails from 'components/how/BlogDetails.svelte';
 import Section from 'components/how/Section.svelte';
 import Heading from 'components/how/Heading.svelte';
 import Paragraph from 'components/how/Paragraph.svelte';
@@ -26,6 +27,8 @@ onMount(() => {
 
 <Section>
     <Heading size={2} centered>How It's Made</Heading>
+
+    <BlogDetails />
 
     <Break />
 
@@ -102,11 +105,13 @@ onMount(() => {
         Some events are only possible during specific states.
 
         <Break />
+        <Break />
 
         Example: A button can be <strong>disabled</strong>, <strong>pressed</strong>, or just
         <strong>idle</strong> and waiting to be clicked! The click event should be possible when
         in the idle state, but not when it is disabled.
 
+        <Break />
         <Break />
 
         Make sense? If you still have questions, feel free to continue on to see them in action or
@@ -167,7 +172,7 @@ onMount(() => {
         and see if it makes sense to you - read the comments for further clarification:
     </Paragraph>
 
-    <Highlight code={examples.initialIdleState} />
+    <Highlight code={examples.initialIdleState} language="js" />
 
     <Paragraph>
         As you might have noticed, the notes on how the machine works were almost
@@ -258,6 +263,12 @@ onMount(() => {
     <Heading id="so-what-now" size={3}>So What Now?</Heading>
 
     <Paragraph>
+        If you're interested in seeing all of the code, you can
+        <Link href="" newTab>find the repo here</Link>. Please star it or share it if
+        you like it!
+    </Paragraph>
+
+    <Paragraph>
         I strongly encourage you to think of a fun machine to build and then just do
         it! Find something that's fun and not too complex. It doesn't really matter if
         you think someone has already done it before..
@@ -268,5 +279,13 @@ onMount(() => {
         There are also still some extra enhancements to add to the overall UX of the
         Finite State Microwave. Check out the GitHub issues and see if you'd like to
         help out!
+    </Paragraph>
+
+    <Paragraph>
+        Let me know how this went for you! If you ran into any issues or you're curious
+        about how it works, just connect with me on Twitter
+        <Link to="https://twitter.com/parker_codes" newTab>@parker_codes</Link>. If you
+        aren't on Twitter or you just prefer a more personal touch, send me an email -
+        parker.mcmullin01@gmail.com.
     </Paragraph>
 </Section>

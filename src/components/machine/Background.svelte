@@ -1,3 +1,3 @@
-<div id="background" class="w-screen h-screen flex justify-center relative">
+<div id="background" class="w-screen h-screen flex flex-col justify-center items-center relative">
     <slot />
 </div>

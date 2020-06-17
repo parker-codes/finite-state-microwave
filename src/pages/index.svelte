@@ -5,6 +5,7 @@ import Door from 'components/machine/Door.svelte';
 import Display from 'components/machine/Display.svelte';
 import Panel from 'components/machine/Panel.svelte';
 import OpenButton from 'components/machine/OpenButton.svelte';
+import Appropriation from 'components/machine/Appropriation.svelte';
 
 import machine from '../machine';
 import { useMachine } from 'xstate-svelte';
@@ -13,7 +14,7 @@ import { formatDigits, formatTimer } from '../helpers';
 
 let { state, send } = useMachine(machine);
 
-export function getDisplay(state, { digits, timer }) {
+function getDisplay(state, { digits, timer }) {
   if (state === 'idle') {
     if (digits === '') return $time;
     return formatDigits(digits);
@@ -38,4 +39,6 @@ $: display = getDisplay($state.value, $state.context)
             on:stop={() => send('STOP')} />
         <OpenButton on:press={() => send('DOOR_OPEN')} />
     </Microwave>
+
+    <Appropriation />
 </Background>

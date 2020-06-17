@@ -56,6 +56,7 @@ onMount(() => {
     </Paragraph>
 
     <Paragraph>
+        <div class="font-bold mb-2">Table of Contents</div>
         <div><Link to="#first-things-first">First Things First</Link></div>
         <div><Link to="#the-machine">The Machine</Link></div>
         <div><Link to="#the-frontend">The Frontend</Link></div>
@@ -224,7 +225,7 @@ onMount(() => {
     <Highlight code={examples.finalPageStructure} />
 
     <Paragraph onDarkBg>
-        After connecting it all together, I had a working frontend. Well, sort of
+        After connecting it all together, I had a working microwave. Well, sort of
         working - it doesn't heat my food.. 🤣
     </Paragraph>
 </Section>
@@ -264,7 +265,7 @@ onMount(() => {
 
     <Paragraph>
         If you're interested in seeing all of the code, you can
-        <Link href="" newTab>find the repo here</Link>. Please star it or share it if
+        <Link href="https://github.com/parker-codes/finite-state-microwave" newTab>find the repo here</Link>. Please star it or share it if
         you like it!
     </Paragraph>
 
@@ -274,11 +275,11 @@ onMount(() => {
         you think someone has already done it before..
     </Paragraph>
 
-    <!-- TODO: add link to GitHub (and make sure it's public!) -->
     <Paragraph>
         There are also still some extra enhancements to add to the overall UX of the
-        Finite State Microwave. Check out the GitHub issues and see if you'd like to
-        help out!
+        Finite State Microwave. Check out the
+        <Link href="https://github.com/parker-codes/finite-state-microwave/issues" newTab>GitHub issues</Link>
+        and see if you'd like to help out!
     </Paragraph>
 
     <Paragraph>

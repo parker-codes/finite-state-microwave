@@ -99,10 +99,10 @@
     estree-walker "^1.0.1"
     micromatch "^4.0.2"
 
-"@sveltech/routify@^1.7.8":
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/@sveltech/routify/-/routify-1.7.8.tgz#762f38f64d0d8f0ca2a56d5037389b7f16058ed5"
-  integrity sha512-XB5DkIcBveWp36Gfkzf13Bm3QOTpWNpXZacu1ZrkFdmi2xKMFxXH+ompXzeSYOFnQbskRzFnyjfp8fRfNXrSbA==
+"@sveltech/routify@^1.7.13":
+  version "1.7.13"
+  resolved "https://registry.yarnpkg.com/@sveltech/routify/-/routify-1.7.13.tgz#38f938f8495d640ece74ee3050e62d930cd73dee"
+  integrity sha512-9xqQdWIt8c9IhckTchDM9J+MWFAb9KlGkgqsBl+A4tXLHjR1VCK21kd/iiQcEovJ0yTRA4qsZKBYB1oxtTEfGw==
   dependencies:
     "@sveltech/ssr" "^0.0.9"
     "@types/node" ">=4.2.0 < 13"

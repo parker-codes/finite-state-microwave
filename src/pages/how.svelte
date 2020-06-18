@@ -14,6 +14,7 @@ import Callout from 'components/how/Callout.svelte';
 import Break from 'components/how/Break.svelte';
 import Link from 'components/how/Link.svelte';
 import Highlight from 'components/how/Highlight.svelte';
+import Visualizer from 'components/how/Visualizer.svelte';
 
 import examples from '../examples.js';
 
@@ -131,13 +132,14 @@ onMount(() => {
     </Paragraph>
 
     <Paragraph onDarkBg>
-        Here's an example of a counter machine that can increment, decrement, and reset:
+        Here's an example of a stop light, albeit quickened so you don't have to wait at
+        that red light! You'll see in the definition that we are transitioning <i>after</i>
+        a specified time.
     </Paragraph>
 
-    <iframe
-        src="https://xstate.js.org/viz/?gist=cb61aac756eeab0e9c4d4e00875b208e"
-        title="xstate visualizer of a counter machine"
-        class="w-full h-128"
+    <Visualizer
+        gist="ae954746c328ad0e7770b1aa4c7134db"
+        of="a stop light"
     />
 </Section>
 
@@ -265,8 +267,8 @@ onMount(() => {
 
     <Paragraph>
         If you're interested in seeing all of the code, you can
-        <Link href="https://github.com/parker-codes/finite-state-microwave" newTab>find the repo here</Link>. Please star it or share it if
-        you like it!
+        <Link to="https://github.com/parker-codes/finite-state-microwave" newTab>find the repo here</Link>. Please star it or share it if
+        you like it! Here's the <Link to="https://xstate.js.org/viz/?gist=ba7f6de2b1561d7d3b4a236426cffa09" newTab>full visualizer</Link> to play around with as well!
     </Paragraph>
 
     <Paragraph>
@@ -278,7 +280,7 @@ onMount(() => {
     <Paragraph>
         There are also still some extra enhancements to add to the overall UX of the
         Finite State Microwave. Check out the
-        <Link href="https://github.com/parker-codes/finite-state-microwave/issues" newTab>GitHub issues</Link>
+        <Link to="https://github.com/parker-codes/finite-state-microwave/issues" newTab>GitHub issues</Link>
         and see if you'd like to help out!
     </Paragraph>
 

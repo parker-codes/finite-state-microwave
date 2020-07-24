@@ -249,7 +249,8 @@ onMount(() => {
     <Paragraph>
         There were a few smaller updates I made to the machine logic. I talked with
         others to get feedback and learn about other ways to add to the machine. Special thanks to my friends
-        Daylon, Mikey (<Link to="https://twitter.com/CodingDive" newTab>@CodingDive</Link>), and
+        Daylon (<Link to="https://twitter.com/DaylonCrider" newTab>@DaylonCrider</Link>),
+        Mikey (<Link to="https://twitter.com/CodingDive" newTab>@CodingDive</Link>), and
         Joe (<Link to="https://twitter.com/jsjoeio" newTab>@jsjoeio</Link>)!
     </Paragraph>
 

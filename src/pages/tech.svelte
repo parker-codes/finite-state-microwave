@@ -1,36 +1,34 @@
 <script>
 const items = [
-    { name: 'Svelte', for: 'Frontend Framework', icon: 'svelte', link: 'https://svelte.dev/' },
-    { name: 'XState', for: 'Machine Definition', icon: 'xstate', link: 'https://xstate.js.org/' },
-    { name: 'Routify', for: 'Routing/Pages', icon: 'routify', link: 'https://routify.dev/' },
-    { name: 'TailwindCSS', for: 'Styling', icon: 'tailwind', link: 'https://tailwindcss.com/' },
-    { name: 'Render', for: 'Hosting', icon: 'render', link: 'https://render.com/' },
-    { name: 'Hero Patterns', for: 'Background Patterns', icon: 'hero-patterns', link: 'https://www.heropatterns.com/' },
+    { name: 'Svelte', for: 'Frontend Framework', logo: 'svelte', link: 'https://svelte.dev/' },
+    { name: 'XState', for: 'Machine Definition', logo: 'xstate', link: 'https://xstate.js.org/' },
+    { name: 'Routify', for: 'Routing/Pages', logo: 'routify', link: 'https://routify.dev/' },
+    { name: 'TailwindCSS', for: 'Styling', logo: 'tailwindcss', link: 'https://tailwindcss.com/' },
+    { name: 'Render', for: 'Hosting', logo: 'render', link: 'https://render.com/' },
+    { name: 'Hero Patterns', for: 'Background Patterns', logo: 'hero-patterns', link: 'https://www.heropatterns.com/' },
 ];
 
 const trackingParams = '?utm_source=blog_post&utm_medium=web&utm_campaign=finite-state-machine';
 </script>
 
-<div class="max-w-xl mx-auto mt-16 pb-16">
+<div class="flex flex-col items-center justify-center max-w-md px-4 pb-16 mx-auto mt-16">
     {#each items as item}
-        <div class="flex items-center mt-4 first:mt-0">
-            <div class="w-16 h-16">
+        <a href="{item.link}{trackingParams}" class="flex flex-col items-center w-full p-8 mt-4 text-center transition duration-200 ease-in-out border-2 border-transparent rounded cursor-pointer hover:border-blue-600 first:mt-0 hover:bg-gray-300">
+            <div class="h-16 mx-auto">
                 <img
-                    src="/img/icons/{item.icon}"
-                    alt="{item.icon} icon"
+                    src="/img/logos/{item.logo}.svg"
+                    alt="{item.name} icon"
                     class="w-full h-full"
-                    width="64"
+                    width="120"
                     height="64"
                 />
             </div>
 
-            <div class="ml-24 w-40">
-                <a href="{item.link}{trackingParams}">
-                    {item.name}
-                </a>
+            <div class="mt-4 text-xl font-bold">
+                {item.name}
             </div>
 
-            <div class="ml-12">{item.for}</div>
-        </div>
+            <div class="mt-2 italic">{item.for}</div>
+        </a>
     {/each}
 </div>

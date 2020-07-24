@@ -1,8 +1,10 @@
 export default {
   initialIdleState: `{
-    id: 'microwave', // what we call it
+    // what we call it
+    id: 'microwave',
 
-    initial: 'idle', // initial state of the machine
+    // initial state of the machine
+    initial: 'idle',
 
     // data that we can manipulate or display
     context: {
@@ -13,7 +15,8 @@ export default {
     states: {
       // the "idle" state
       idle: {
-        entry: ['resetDigits', 'resetTimer'], // some functions to run when I enter this state
+        // some functions to run when I enter this state
+        entry: ['resetDigits', 'resetTimer'],
 
         on: {
           PRESS_DIGIT: {
@@ -22,13 +25,17 @@ export default {
 
           START: {
             cond: 'hasDigits',
-            actions: ['setTimer'], // run the "setTimer" function which converts the digits (string) into the timer (number)
-            target: 'heating', // then switch into the "heating" state!
+            // run the "setTimer" function which converts
+            // the digits (string) into the timer (number)
+            actions: ['setTimer'],
+            // then switch into the "heating" state!
+            target: 'heating',
           },
 
           STOP: {
             actions: ['beep'],
-            target: 'idle', // reenters this "idle" state, firing entry actions
+            // reenters this "idle" state, firing entry actions
+            target: 'idle',
           },
 
           ADD_THIRTY_SECS: {
@@ -62,7 +69,8 @@ export default {
   import time from '../stores/time';
   import { formatDigits, formatTimer } from '../helpers';
 
-  let { state, send } = useMachine(machine); // here's where we get our machine store!
+  // here's where we get our machine store!
+  let { state, send } = useMachine(machine);
 
   function getDisplay(state, { digits, timer }) {
       if (state === 'idle') {

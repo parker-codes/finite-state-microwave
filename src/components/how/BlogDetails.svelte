@@ -1,7 +1,9 @@
-<div class="w-48 mx-auto bg-red-100 rounded border-2 border-l-8 border-red-500 text-red-700 p-4 my-8 text-lg">
-    <div class="text-xl font-bold mb-4">
+<div class="w-56 p-4 mx-auto my-8 text-lg text-red-700 bg-red-100 border-2 border-l-8 border-red-500 rounded">
+    <div class="text-xl font-bold">
         Parker McMullin
     </div>
 
-    <p>June 16th, 2020</p>
+    <p class="mt-4">July 24th, 2020</p>
+
+    <p class="mt-4">15 - 20 minute read</p>
 </div>

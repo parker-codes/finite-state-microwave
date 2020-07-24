@@ -57,7 +57,7 @@ onMount(() => {
     </Paragraph>
 
     <Paragraph>
-        <div class="font-bold mb-2">Table of Contents</div>
+        <div class="mb-2 font-bold">Table of Contents</div>
         <div><Link to="#first-things-first">First Things First</Link></div>
         <div><Link to="#the-machine">The Machine</Link></div>
         <div><Link to="#the-frontend">The Frontend</Link></div>
@@ -101,34 +101,42 @@ onMount(() => {
 
     <Callout title="What are State Machines?">
         A simple explanation might be the "statuses" (aka. states) of a particular thing
-        (the machine). If a machine is <span class="underline">finite</span>, it has a limited
+        (the machine). If a machine has <span class="underline">finite</span> states, it has a limited
         number of these states and can be modeled! There are different events that transition the
-        machine to different states and might update the related data (also called context).
-        Some events are only possible during specific states.
+        machine to different states. If there is related data (also called context) such as a counter
+        keeping track of how many times it is clicked, this actually becomes a statechart, but let's
+        not delve too deep just yet. To better model the behavior of the thing you're building, some
+        events might only be possible during specific states.
 
         <Break />
         <Break />
 
         Example: A button can be <strong>disabled</strong>, <strong>pressed</strong>, or just
         <strong>idle</strong> and waiting to be clicked! The click event should be possible when
-        in the idle state, but not when it is disabled.
-
-        <Break />
-        <Break />
-
-        Make sense? If you still have questions, feel free to continue on to see them in action or
-        look up other examples online.
+        in the idle state, but not when it is disabled. There are likely other states than these,
+        but I hope it's a simple example.
     </Callout>
 
     <Paragraph onDarkBg>
-        One really neat thing about FSMs is that their declarative nature, made possible
-        through the use of an object API, allows for them to be visualized without any
-        specific integration into your frontend. I actually did not build any frontend
-        for the microwave until the functionality was about 90% complete! Weird, I know!
-        This is different than the traditional, more imperative programming style where
-        we integrate the logic in with the markup and components. The visualizer that
-        xstate provides lets us see what the current state is, what events we can trigger,
-        and other helpful things so we can build out our machine.
+        State machines are completely independent of your frontend technology and can be
+        used with anything like Vue, React, Ember, or even Svelte as seen in this post. The
+        decoupling between business logic and UI is really powerful.
+    </Paragraph>
+
+    <Paragraph onDarkBg>
+        Statecharts are a visual formalism and can consequently be described in code as well
+        as using diagrams. With some effort, one format can be translated into the other. That's
+        how NASA developed the Curiosity rover (by drawing diagrams and translating them to code)
+        and it's how we'll develop a microwave!
+    </Paragraph>
+
+    <Paragraph onDarkBg>
+        I actually did not build any frontend for the microwave until the functionality was
+        about 90% complete! Weird, I know! This is different than the traditional, more
+        imperative programming style where we integrate the logic in with the markup and
+        components. I used a package called XState to create the machine. The
+        visualizer that XState provides lets us see what the current state is, what
+        events we can trigger, and other helpful things so we can build machines.
     </Paragraph>
 
     <Paragraph onDarkBg>
@@ -169,17 +177,19 @@ onMount(() => {
     </Paragraph>
 
     <Paragraph>
-        The next step was to turn my lists into code. The NPM package called xstate
-        uses a declarative object API. You can define the states and actions in one
-        area, and define the logic in a completely separate area. Take a look at this
-        and see if it makes sense to you - read the comments for further clarification:
+        The next step was to turn my lists (including the idle state) into code. XState
+        uses a declarative object API, meaning it isn't defined using procedural code that
+        reads top to bottom.
+        You can define the states and actions in one area, and define the event logic in a
+        completely separate area. Take a look at this and see if it makes sense to you -
+        read the comments for further clarification:
     </Paragraph>
 
     <Highlight code={examples.initialIdleState} language="js" />
 
     <Paragraph>
         As you might have noticed, the notes on how the machine works were almost
-        1:1 converted into the object API. Read the xstate docs to learn more of
+        1:1 converted into the object API. Read the XState docs to learn more of
         how that part works.
     </Paragraph>
 </Section>
@@ -218,9 +228,10 @@ onMount(() => {
 
     <Paragraph onDarkBg>
         But wait, how does the machine hook into the frontend? Good question. There's
-        a package called xstate-svelte which wraps the machine behind a store. If
-        that's not familiar to you, don't worry. It's just a way we're going to get
-        reactive updates. After setting up our machine and connecting the events to
+        a package called <Link to="https://www.npmjs.com/package/xstate-svelte" newTab>xstate-svelte</Link>
+        which wraps the machine behind a store.
+        If that's not familiar to you, don't worry. It's just a way we're going to get
+        live/reactive updates. After setting up our machine and connecting the events to
         the components, this is what the code looks like now:
     </Paragraph>
 
@@ -237,8 +248,9 @@ onMount(() => {
 
     <Paragraph>
         There were a few smaller updates I made to the machine logic. I talked with
-        others to get feedback and learn about other ways to add to the machine. Thanks
-        Mikey (<Link to="https://twitter.com/CodingDive?s=20" newTab>@CodingDive</Link>)!
+        others to get feedback and learn about other ways to add to the machine. Special thanks to my friends
+        Daylon, Mikey (<Link to="https://twitter.com/CodingDive" newTab>@CodingDive</Link>), and
+        Joe (<Link to="https://twitter.com/jsjoeio" newTab>@jsjoeio</Link>)!
     </Paragraph>
 
     <List

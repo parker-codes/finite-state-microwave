@@ -103,7 +103,6 @@ export default Machine(
 
           ADD_THIRTY_SECS: {
             actions: ['add30SecondsToTimer'],
-            // TODO: add a guard so that it can't go over 99:99
           },
 
           TICK: [
@@ -206,6 +205,7 @@ export default Machine(
       add30SecondsToTimer: assign({
         timer: (context) => {
           if (context.timer === null) return 30;
+          if (context.timer > 6009) return 6039; // limit to 99:99
           return context.timer + 30;
         },
       }),

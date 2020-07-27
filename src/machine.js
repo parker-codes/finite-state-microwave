@@ -74,7 +74,7 @@ export default Machine(
           ADD_THIRTY_SECS: [
             {
               cond: 'hasDigits',
-              actions: ['add30SecondsToDigits', 'setTimer'],
+              actions: ['setTimer', 'add30SecondsToTimer'],
               target: 'settingTimer',
             },
             {

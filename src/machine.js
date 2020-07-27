@@ -74,7 +74,8 @@ export default Machine(
           ADD_THIRTY_SECS: [
             {
               cond: 'hasDigits',
-              actions: ['add30SecondsToDigits'],
+              actions: ['add30SecondsToDigits', 'setTimer'],
+              target: 'settingTimer',
             },
             {
               actions: ['add30SecondsToDigits', 'setTimer'],
@@ -82,6 +83,30 @@ export default Machine(
             },
           ],
         },
+      },
+
+      settingTimer: {
+        on: {
+          START: {
+            cond: 'hasDigits',
+            target: 'heating',
+          },
+          
+          STOP: {
+            actions: ['beep'],
+            target: 'idle',
+          },
+
+          ADD_THIRTY_SECS: {
+            actions: ['add30SecondsToTimer'],
+          },
+
+          DOOR_OPEN: {},
+
+          '*': {
+            target: 'idle',
+          },
+        }
       },
 
       heating: {
